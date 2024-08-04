@@ -14,7 +14,7 @@ const CountreisList = () => {
     isPending,
     refetch: fetchCountries,
   } = useCountries({ fields: ["name", "flags"] });
-  const { loading, searchTerm, countries, setCountries, setSearchTerm } =
+  const { searchTerm, countries, setCountries, setSearchTerm } =
     useContext(CountriesContext);
 
   useEffect(() => {
@@ -24,7 +24,6 @@ const CountreisList = () => {
     }
   }, [data]);
 
-  const hasLoading = loading || isPending;
   const hasSearchTerm = searchTerm != undefined && searchTerm != "";
   const filteredCountries = !hasSearchTerm
     ? countries
@@ -35,7 +34,7 @@ const CountreisList = () => {
         ]);
       });
 
-  if (hasLoading) {
+  if (isPending) {
     return (
       <section className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3 my-10">
         {Array.from({ length: 10 }).map((_, idx) => {
@@ -79,7 +78,7 @@ const CountreisList = () => {
 
   return (
     <section className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3 my-10">
-      {!hasLoading &&
+      {!isPending &&
         filteredCountries.map((country) => {
           return <CountryItem key={country.name.common} country={country} />;
         })}

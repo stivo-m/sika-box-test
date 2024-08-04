@@ -19,6 +19,7 @@ export type Country = {
   name: CountryName;
   currencies?: Record<string, Currency>;
   capital?: string[];
+  timezones?: string[];
   languages?: Record<string, string>;
   population?: number;
 };
