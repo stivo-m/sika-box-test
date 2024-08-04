@@ -24,5 +24,5 @@ export type Country = {
 };
 
 export type CountriesFilters = {
-  fields?: string[];
+  fields: string[];
 };
