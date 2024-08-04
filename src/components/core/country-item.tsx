@@ -1,3 +1,6 @@
+import CountryDetailsDialog from "@/components/core/country-details-dialog";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -5,8 +8,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 import { Country } from "@/lib/types";
 
@@ -18,11 +19,14 @@ const CountryItem = ({ country }: Props) => {
   return (
     <Card className="bg-white">
       <CardHeader>
-        <AspectRatio ratio={16 / 9}>
+        <AspectRatio
+          ratio={16 / 9}
+          className="shadow-sm border border-slate-400 rounded-md"
+        >
           <img
             src={country.flags.svg || country.flags.png}
             alt={country.flags.alt || country.name.official}
-            className="rounded-md h-full md:max-h-40 w-full object-contain"
+            className="rounded-md object-cover  min-w-full h-full items-center justify-center"
           />
         </AspectRatio>
       </CardHeader>
@@ -32,7 +36,9 @@ const CountryItem = ({ country }: Props) => {
           <CardDescription>{country.name.official}</CardDescription>
         </div>
 
-        <Button>View Country</Button>
+        <CountryDetailsDialog asChild country={country}>
+          <Button>View Country</Button>
+        </CountryDetailsDialog>
       </CardContent>
     </Card>
   );
