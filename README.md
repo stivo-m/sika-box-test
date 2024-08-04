@@ -9,6 +9,9 @@ This project is a web application that displays information about countries usin
 - A search bar to filter the list of countries by name.
 
 The goal was to create a clean, user-friendly interface using modern coding practices and frameworks.
+![Screenshot from 2024-08-04 23-27-00](https://github.com/user-attachments/assets/75923b41-f098-477d-81dc-b204ce6e1b64)
+![Screenshot from 2024-08-04 23-27-14](https://github.com/user-attachments/assets/cac44c63-9040-45ef-aab7-5513ae49c0ae)
+
 
 ## Links
 
@@ -30,6 +33,7 @@ docker run -p 3000:3000 steven-my-sika-box
 ```
 
 You should see the react project launched on your terminal, and have access to both the local and network environments for the react application. Copy and paste the Network url to your browser to access the application.
+![Screenshot from 2024-08-04 23-25-07](https://github.com/user-attachments/assets/545cd2ce-4efa-483e-b56a-70f840bcf675)
 
 ---
 
