@@ -85,20 +85,20 @@ const CountryDetailsDialog = ({ country, children, asChild }: Props) => {
           </DialogTitle>
           {isLoading && <DialogDescription>Loading...</DialogDescription>}
           {!isLoading && (
-            <DialogDescription className="text-base w-full gap-3 flex flex-col divide-x">
-              <span>
+            <DialogDescription className="text-base w-full gap-4 flex justify-center flex-col divide-y">
+              <span className="pt-2">
                 Official Name:{" "}
                 <span className="font-bold">{data.name.official}</span>
               </span>
 
-              <span>
+              <span className="pt-2">
                 Common Name:{" "}
                 <span className="font-bold">{data.name.common}</span>
               </span>
               <span>
                 Capital City: <span className="font-bold">{capitalCity}</span>
               </span>
-              <span>
+              <span className="pt-2">
                 Population:{" "}
                 <span className="font-bold">
                   {data.population?.toLocaleString(undefined, {
@@ -107,15 +107,15 @@ const CountryDetailsDialog = ({ country, children, asChild }: Props) => {
                 </span>
               </span>
 
-              <span>
+              <span className="pt-2">
                 Languages: <span className="font-bold">{languages}</span>
               </span>
 
-              <span>
+              <span className="pt-2">
                 Currencies: <span className="font-bold">{currencies}</span>
               </span>
 
-              <span>
+              <span className="pt-2">
                 Timezones: <span className="font-bold">{timezones}</span>
               </span>
             </DialogDescription>
